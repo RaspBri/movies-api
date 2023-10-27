@@ -1,3 +1,5 @@
+Add .json file with movie information
+
 Model class uses service class and repository class to manipulate the database
 
 If the local port is already in use, here is how to fix the error:
