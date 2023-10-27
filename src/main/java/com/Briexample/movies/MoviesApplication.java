@@ -1,3 +1,5 @@
+// Contains main
+
 package com.Briexample.movies;
 
 import org.springframework.boot.SpringApplication;

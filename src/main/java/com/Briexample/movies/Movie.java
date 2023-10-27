@@ -1,3 +1,6 @@
+// MODEL
+// Based on MongoDB entry
+
 package com.Briexample.movies;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -5,6 +8,9 @@ import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
 
@@ -22,7 +28,9 @@ public class Movie {
     private String trailerLink; // youtube movie link
     private String poster;
     private List<String> genres;
-    private List<String> backdrops;
+    private List<String> backdrops; // Use List when you have an array in MongoDB
 
+    @DocumentReference // Store only ids of review, reviews will be in separate collection
+    private List<Review> reviewIds;
 
 }
