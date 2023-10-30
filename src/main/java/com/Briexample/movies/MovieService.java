@@ -3,9 +3,10 @@
 
 package com.Briexample.movies;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
+import java.util.*;
 
 @Service // marks class as service provider
 public class MovieService {
@@ -14,4 +15,10 @@ public class MovieService {
     public List<Movie> allMovies(){
         return movieRepository.findAll(); // returns list of data
     }
+
+    // Optional - may not be a value, does not use null as return type
+    public Optional<Movie> singleMovie(String imdbId){
+        return movieRepository.findMovieByImdbId(imdbId);
+    }
+
 }
